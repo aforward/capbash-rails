@@ -1,0 +1,15 @@
+#!/bin/bash
+mkdir -p ./nodes
+
+printf "%b" "#!/bin/bash
+
+RAILS_NAME=samplerails \\
+  RAILS_REPO=git@github.com:aforward/samplerails.git \\
+  ./submodules/rails/install
+" > ./nodes/rails
+
+chmod 755 ./nodes/rails
+
+capbash install deploykeys
+capbash install git
+capbash install docker
