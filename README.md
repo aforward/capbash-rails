@@ -25,12 +25,10 @@ capbash install rails
 The available configurations include:
 
 ```
-ELIXIR_VEION=${ELIXIR_VERSION-master}
 RAILS_NAME=${RAILS_NAME-samplerails}
 RAILS_DIR=${RAILS_DIR-/var/apps/${RAILS_NAME}}
 RAILS_REPO=${RAILS_REPO-git@github.com:aforward/samplerails.git}
 RAILS_HTTP_PORT=${RAILS_PORT-80}
-RAILS_SSL_PORT=${RAILS_PORT-443}
 ```
 
 

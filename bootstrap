@@ -3,6 +3,8 @@ mkdir -p ./nodes
 
 printf "%b" "#!/bin/bash
 
+./submodules/deploykeys/install
+
 RAILS_NAME=samplerails \\
   RAILS_REPO=git@github.com:aforward/samplerails.git \\
   ./submodules/rails/install
