@@ -5,7 +5,7 @@
 #-----------
 
 RAILS_NAME=${RAILS_NAME-samplerails}
-RAILS_DIR=${RAILS_DIR-/var/apps/${RAILS_NAME}}
+RAILS_DIR=${RAILS_DIR-/var/local/apps/${RAILS_NAME}}
 RAILS_REPO=${RAILS_REPO-git@github.com:aforward/samplerails.git}
 RAILS_HTTP_PORT=${RAILS_PORT-80}
 
@@ -20,7 +20,7 @@ sed -i s/@ELIXIR_VERSION@/$ELIXIR_VERSION/g $RAILS_DIR/Dockerfile
 sed -i s/@RAILS_NAME@/${RAILS_NAME}/g $RAILS_DIR/Dockerfile
 
 GIT_URL=$RAILS_REPO \
-  GIT_BASE_DIR=$RAILS_DIR \
+  GIT_APPS_DIR=$RAILS_DIR \
   GIT_REPO_NAME=webapp \
   ./submodules/git/install
 

@@ -26,7 +26,7 @@ The available configurations include:
 
 ```
 RAILS_NAME=${RAILS_NAME-samplerails}
-RAILS_DIR=${RAILS_DIR-/var/apps/${RAILS_NAME}}
+RAILS_DIR=${RAILS_DIR-/var/local/apps/${RAILS_NAME}}
 RAILS_REPO=${RAILS_REPO-git@github.com:aforward/samplerails.git}
 RAILS_HTTP_PORT=${RAILS_PORT-80}
 ```
