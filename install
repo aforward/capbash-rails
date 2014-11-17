@@ -40,7 +40,7 @@ docker run -i -t -p 9873:3000 ${RAILS_NAME} /bin/bash
 " > $RAILS_DIR/debug
 
 printf "%b" "#!/bin/bash
-docker rm ${RAILS_NAME} > /dev/num
+docker rm ${RAILS_NAME} > /dev/null
 docker run -d -t -p ${RAILS_HTTP_PORT}:3000 --name ${RAILS_NAME} ${RAILS_NAME}
 " > $RAILS_DIR/start
 
