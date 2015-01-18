@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./submodules/bootstrap/logging
+source ./bits/bootstrap/logging
 set -euo pipefail ; IFS=$'\n\t'
 
 #-----------
@@ -17,14 +17,14 @@ RAILS_HTTP_PORT=${RAILS_PORT-80}
 
 mkdir -p $RAILS_DIR
 
-cp ./submodules/rails/files/rails.dockerfile $RAILS_DIR/Dockerfile
+cp ./bits/rails/files/rails.dockerfile $RAILS_DIR/Dockerfile
 sed -i s/@ELIXIR_VERSION@/$ELIXIR_VERSION/g $RAILS_DIR/Dockerfile
 sed -i s/@RAILS_NAME@/${RAILS_NAME}/g $RAILS_DIR/Dockerfile
 
 GIT_URL=$RAILS_REPO \
   GIT_APPS_DIR=$RAILS_DIR \
   GIT_REPO_NAME=webapp \
-  ./submodules/git/install
+  ./bits/git/install
 
 printf "%b" "
 webapp/.git
@@ -44,8 +44,8 @@ docker rm ${RAILS_NAME} > /dev/null
 docker run -d -t -p ${RAILS_HTTP_PORT}:3000 --name ${RAILS_NAME} ${RAILS_NAME}
 " > $RAILS_DIR/start
 
-NAME=$RAILS_NAME DIR=$RAILS_DIR ./submodules/docker/idempot
-NAME=$RAILS_NAME DIR=$RAILS_DIR ./submodules/docker/stop
+NAME=$RAILS_NAME DIR=$RAILS_DIR ./bits/docker/idempot
+NAME=$RAILS_NAME DIR=$RAILS_DIR ./bits/docker/stop
 
 chmod 755 $RAILS_DIR/debug
 chmod 755 $RAILS_DIR/start
