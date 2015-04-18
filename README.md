@@ -6,10 +6,10 @@ Scripts for installing [rails](https://github.com/railsframework/rails), should 
 # How to Install #
 
 Install capbash first, more details at:
-https://github.com/aforward/capbash
+https://github.com/capbash/capbash
 
 ```
-curl -s https://raw.githubusercontent.com/aforward/capbash/master/capbash-installer | bash
+curl -s https://raw.githubusercontent.com/capbash/capbash/master/capbash-installer | bash
 capbash new YOUR_REPO_ROOT
 cd YOUR_REPO_ROOT
 ```
@@ -27,7 +27,7 @@ The available configurations include:
 ```
 RAILS_NAME=${RAILS_NAME-samplerails}
 RAILS_DIR=${RAILS_DIR-/var/local/apps/${RAILS_NAME}}
-RAILS_REPO=${RAILS_REPO-git@github.com:aforward/samplerails.git}
+RAILS_REPO=${RAILS_REPO-git@github.com:capbash/samplerails.git}
 RAILS_HTTP_PORT=${RAILS_PORT-80}
 ```
 

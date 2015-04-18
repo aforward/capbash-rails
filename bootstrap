@@ -6,7 +6,7 @@ printf "%b" "#!/bin/bash
 ./bits/deploykeys/install
 
 RAILS_NAME=samplerails \\
-  RAILS_REPO=git@github.com:aforward/samplerails.git \\
+  RAILS_REPO=git@github.com:capbash/samplerails.git \\
   ./bits/rails/install
 " > ./nodes/rails
 

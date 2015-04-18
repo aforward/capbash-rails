@@ -8,7 +8,7 @@ set -euo pipefail ; IFS=$'\n\t'
 
 RAILS_NAME=${RAILS_NAME-samplerails}
 RAILS_DIR=${RAILS_DIR-/var/local/apps/${RAILS_NAME}}
-RAILS_REPO=${RAILS_REPO-git@github.com:aforward/samplerails.git}
+RAILS_REPO=${RAILS_REPO-git@github.com:capbash/samplerails.git}
 RAILS_HTTP_PORT=${RAILS_PORT-80}
 
 #-----------
